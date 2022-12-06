@@ -29,6 +29,35 @@ If you see the version of terraform you are good to go.
 8.Now you need to auntheticate to the terraform
 
 ```
+export AWS_ACCESS_KEY_ID=<YOUR ACCESS KEY>
+export AWS_SECRET_ACCESS_KEY=<YOUR SECRET ACESS KEY>
 
+```
+
+9.Install required providers
+
+```
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+#alternately you can do this
+
+provider "aws" {
+  region     = "us-west-2"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
+}
 
 ```
